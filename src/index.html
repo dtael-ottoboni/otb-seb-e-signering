@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="cbse">
+    <head>
+      <link rel="icon"          type="image/x-icon" href="img/dc/favicon.ico" />
+      <link rel="shortcut icon" type="image/x-icon" href="img/dc/favicon.ico" />
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <title>Dev Index</title>
+      <link rel="stylesheet" type="text/css" media="all" href="css/normalize.min.css">
+      <link rel="stylesheet" type="text/css" media="all" href="css/main.min.css">
+      
+    </head>
+    <body>
+        <div id="dev-selector">
+          Set Theme: 
+          <select onchange="changeTheme(this.value);">
+            <option value="ecse">Eurocard (SE)</option>
+            <option value="cbse">Co-Brands (SE)</option>
+            <option value="dcse">Diners Club (SE)</option>
+            <option value="ecno">Eurocard (NO)</option>
+            <option value="cbno">Co-Brands (NO)</option>
+            <option value="dcno">Diners Club (NO)</option>
+          </select>
+          Set Logo: 
+          <select onchange="setCoBrandLogo(this.value);">
+            <option value="generic">Generic</option>
+            <option value="sase">sase</option>
+            <option value="acno">acno</option>
+            <option value="esno">esno</option>
+            <option value="gcdk">gcdk</option>
+            <option value="sadk">sadk</option>
+            <option value="sano">sano</option>
+            <option value="sase">sase</option>
+            <option value="stno">stno</option>
+            <option value="wase">wase</option>
+          </select>
+        </div>
+        <div class="wrapper">
+          <div class="row">
+            <div>
+              <div>
+                <img id="logoimg" src="img/cobrand_generic_logo.png" alt="" border="0">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              @@include('./partials/_dynamic-content.html')
+            </div>
+          </div>
+        </div>
+    </body>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script>
+      var changeTheme = function changeThemeFunction(val) {
+        var html = $("html");
+
+        if (val == "cb") {
+          setCoBrandLogo("DIF");
+        }
+        html.removeClass();
+        html.addClass(val);
+      };
+    </script>
+</html>
