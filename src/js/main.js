@@ -12,13 +12,13 @@ var setScreenWitdhClass = function setScreenWitdhClassFunction() {
     } else {
         $('body').addClass('xxs');
     }
-};
+};  
 
 var setCoBrandLogo = function setCoBrandLogoFunction(val) {
-  var logoimg = $("#logoimg");
-  if ($("html").hasClass("cb") || $("html").hasClass("cbse") || $("html").hasClass("cbdk") || $("html").hasClass("cbno")) {
-    logoimg.attr("src","img/" + val + "_logo.png");
-  }
+    var logoimg = $("#logoimg");
+    if ($("html").hasClass("cb") || $("html").hasClass("cbse") || $("html").hasClass("cbdk") || $("html").hasClass("cbno")) {
+        logoimg.attr("src","img/logo_" + val + ".png");
+    }
 };
 
 var centerContent = function centerContentFunction(val) {
@@ -40,58 +40,55 @@ var centerContent = function centerContentFunction(val) {
 };
 
 var getBrand = function getCoBrandFunction() {
-  var referrer    = ""
-  ,   cobrands    = [
-        "acno"
-      , "chse"
-      , "cono"
-      , "cose"
-      , "djse"
-      , "ecdk"
-      , "ecno"
-      , "ecse"
-      , "eeen"
-      , "esno"
-      , "fadk"
-      , "fano"
-      , "fase"
-      , "gcdk"
-      , "gcno"
-      , "ildk"
-      , "jese"
-      , "jydk"
-      , "lkno"
-      , "nkse"
-      , "obno"
-      , "opse"
-      , "quno"
-      , "quse"
-      , "sadk"
-      , "sano"
-      , "sase"
-      , "sbno"
-      , "sbse"
-      , "sfse"
-      , "sjse"
-      , "ssse"
-      , "stno"
-      , "stse"
-      , "vono"
-      , "wase"
-  ];
+  var   referrer = ""
+    ,   cobrands = [
+          "acno" //
+        , "chse" //
+        , "cono" //
+        , "cose" //
+        , "djse" //
+        , "ecdk" //
+        , "ecno" //
+        , "ecse" //
+        , "eeen" //
+        , "esno" //
+        , "fadk" //
+        , "fano" //
+        , "fase" //
+        , "gcdk" //
+        , "gcno" //
+        , "ildk" //
+        , "jese" //
+        , "jydk" //
+        , "lkno" //
+        , "nkse" //
+        , "obno" //
+        , "opse" //
+        , "quno" //
+        , "quse" //
+        , "sadk" // SAS Denmark
+        , "sano" // SAS Norway
+        , "sase" // SAS Sweden
+        , "sbno" //
+        , "sbse" //
+        , "sfse" //
+        , "sjse" //
+        , "ssse" //
+        , "stno" //
+        , "stse" //
+        , "vono" //
+        , "wase" // 
+    ];
 
-  if (document.referrer !== "") {
-    //referrer = document.referrer;
-    referrer = "http://127.0.0.1:3000/acno/index.html";
-    console.log(referrer);
-    for (var i = 0, len = cobrands.length; i < len; ++i) {
-        if (referrer.indexOf(cobrands[i]) !== -1) {
-            console.log(cobrands[i]);
-            setCoBrandLogo(cobrands[i]);
+    if (document.referrer !== "") {
+        //referrer = document.referrer;
+        referrer = "http://127.0.0.1:3000/stno/index.html";
+        for (var i = 0, len = cobrands.length; i < len; ++i) {
+            if (referrer.indexOf(cobrands[i]) !== -1) {
+                setCoBrandLogo(cobrands[i]);
+            }
         }
     }
-
-  }
 };
 
 $(function() {
@@ -104,4 +101,3 @@ $(window).resize(function() {
     setScreenWitdhClass();
     centerContent();
 });
-
