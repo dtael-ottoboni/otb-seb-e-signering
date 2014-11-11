@@ -18,11 +18,7 @@ var logoimg = $("#logoimg");
 var header = $(".gh"); 
 
 var setCoBrandLogo = function setCoBrandLogoFunction(val) {
-    if ($("html").hasClass("cb") || 
-        $("html").hasClass("cbse") || 
-        $("html").hasClass("cbdk") || 
-        $("html").hasClass("cbno")) {
-        
+    if ($("html").hasClass("nis_cobrand")) {
         logoimg.attr("src","img/logo_" + val + ".png");
         header.hide();
     }
@@ -53,44 +49,45 @@ var getBrand = function getCoBrandFunction() {
         , "chse"
         , "cono"
         , "cose"
-        , "djse"
+        , "djse" //DIF
         , "ecdk"
         , "ecno"
         , "ecse"
-        , "eeen"
+        , "eeen" //Eurocard
         , "esno"
-        , "fadk"
-        , "fano"
-        , "fase"
+        , "fadk" //finnair
+        , "fano" //finnair
+        , "fase" //finnair
         , "gcdk"
         , "gcno"
-        , "ildk"
-        , "jese"
+        //, "ildk" //Missing image
+        , "jese" //ingo
         , "jydk"
         , "lkno"
         , "nkse"
-        , "obno"
+        //, "obno" //Missing image
         , "opse"
         , "quno"
         , "quse"
         , "sadk"
         , "sano"
         , "sase"
-        , "sase"
-        , "sbno"
-        , "sbse"
+        , "sbno" //SAAB
+        , "sbse" //SAAB
         , "sfse"
         , "sjse"
-        , "ssse"
+        , "ssse" //SEB
         , "stno"
         , "stse"
-        , "vono"
+        , "vono" //Volvo
         , "wase"
     ];
 
     if (document.referrer !== "") {
+
         referrer = document.referrer;
-        //referrer = "http://127.0.0.1:3000/chse/index.html";
+
+        referrer = "http://127.0.0.1:3000/acno/index.html";
         for (var i = 0, len = cobrands.length; i < len; ++i) {
             if (referrer.indexOf(cobrands[i]) !== -1) {
                 setCoBrandLogo(cobrands[i]);
@@ -102,9 +99,10 @@ var getBrand = function getCoBrandFunction() {
     }
 };
 
+
 $(function() {
     setScreenWitdhClass();
-    //getBrand();
+    getBrand();
     centerContent();
 });
 
