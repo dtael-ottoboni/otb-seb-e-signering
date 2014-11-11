@@ -1,2 +1,35 @@
+<div id="dev-selector">
+  Set Theme: 
+  <select onchange="changeTheme(this.value);">
+    <option value="ecse">Eurocard (SE)</option>
+    <option value="cbse">Co-Brands (SE)</option>
+    <option value="dcse">Diners Club (SE)</option>
+    <option value="ecno">Eurocard (NO)</option>
+    <option value="cbno">Co-Brands (NO)</option>
+    <option value="dcno">Diners Club (NO)</option>
+  </select>
+  Set Logo: 
+  <select onchange="setCoBrandLogo(this.value);">
+    <option value="generic">Generic</option>
+    <option value="sase">sase</option>
+    <option value="acno">acno</option>
+    <option value="esno">esno</option>
+    <option value="gcdk">gcdk</option>
+    <option value="sadk">sadk</option>
+    <option value="sano">sano</option>
+    <option value="sase">sase</option>
+    <option value="stno">stno</option>
+    <option value="wase">wase</option>
+  </select>
+</div>
+<script>
+  var changeTheme = function changeThemeFunction(val) {
+    var html = $("html");
 
-
+    if (val == "cb") {
+      setCoBrandLogo("DIF");
+    }
+    html.removeClass();
+    html.addClass(val);
+  };
+</script>

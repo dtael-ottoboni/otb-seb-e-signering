@@ -1,10 +1,6 @@
 /***********
 BREAKPOINTS
 ***********/
-$xsmallscreens  :   20.000em;
-$smallscreens   :   31.938em;
-$mediumscreens  :   64.063em;
-$largescreens   :   90.063em;
 
 @mixin mq($mq) {
     // Extra Small screens

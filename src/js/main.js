@@ -12,12 +12,19 @@ var setScreenWitdhClass = function setScreenWitdhClassFunction() {
     } else {
         $('body').addClass('xxs');
     }
-};  
+}; 
+
+var logoimg = $("#logoimg");
+var header = $(".gh"); 
 
 var setCoBrandLogo = function setCoBrandLogoFunction(val) {
-    var logoimg = $("#logoimg");
-    if ($("html").hasClass("cb") || $("html").hasClass("cbse") || $("html").hasClass("cbdk") || $("html").hasClass("cbno")) {
+    if ($("html").hasClass("cb") || 
+        $("html").hasClass("cbse") || 
+        $("html").hasClass("cbdk") || 
+        $("html").hasClass("cbno")) {
+        
         logoimg.attr("src","img/logo_" + val + ".png");
+        header.hide();
     }
 };
 
@@ -42,51 +49,55 @@ var centerContent = function centerContentFunction(val) {
 var getBrand = function getCoBrandFunction() {
   var   referrer = ""
     ,   cobrands = [
-          "acno" //
-        , "chse" //
-        , "cono" //
-        , "cose" //
-        , "djse" //
-        , "ecdk" //
-        , "ecno" //
-        , "ecse" //
-        , "eeen" //
-        , "esno" //
-        , "fadk" //
-        , "fano" //
-        , "fase" //
-        , "gcdk" //
-        , "gcno" //
-        , "ildk" //
-        , "jese" //
-        , "jydk" //
-        , "lkno" //
-        , "nkse" //
-        , "obno" //
-        , "opse" //
-        , "quno" //
-        , "quse" //
-        , "sadk" // SAS Denmark
-        , "sano" // SAS Norway
-        , "sase" // SAS Sweden
-        , "sbno" //
-        , "sbse" //
-        , "sfse" //
-        , "sjse" //
-        , "ssse" //
-        , "stno" //
-        , "stse" //
-        , "vono" //
-        , "wase" // 
+          "acno"
+        , "chse"
+        , "cono"
+        , "cose"
+        , "djse"
+        , "ecdk"
+        , "ecno"
+        , "ecse"
+        , "eeen"
+        , "esno"
+        , "fadk"
+        , "fano"
+        , "fase"
+        , "gcdk"
+        , "gcno"
+        , "ildk"
+        , "jese"
+        , "jydk"
+        , "lkno"
+        , "nkse"
+        , "obno"
+        , "opse"
+        , "quno"
+        , "quse"
+        , "sadk"
+        , "sano"
+        , "sase"
+        , "sase"
+        , "sbno"
+        , "sbse"
+        , "sfse"
+        , "sjse"
+        , "ssse"
+        , "stno"
+        , "stse"
+        , "vono"
+        , "wase"
     ];
 
     if (document.referrer !== "") {
-        //referrer = document.referrer;
-        referrer = "http://127.0.0.1:3000/stno/index.html";
+        referrer = document.referrer;
+        //referrer = "http://127.0.0.1:3000/chse/index.html";
         for (var i = 0, len = cobrands.length; i < len; ++i) {
             if (referrer.indexOf(cobrands[i]) !== -1) {
                 setCoBrandLogo(cobrands[i]);
+                logoimg.show();
+                return false;
             }
+            logoimg.hide();
         }
     }
 };

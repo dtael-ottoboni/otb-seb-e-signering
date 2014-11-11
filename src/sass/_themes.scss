@@ -1,25 +1,29 @@
 
 html {
-  .row:last-child > div {
-    //padding: 40px 23px 30px;
-  }
-
+  
   #logoimg {
     margin-top: 6px;
     margin-left: 24px;
     height: 70px;
   }
+  .gh {
+    display: none;
+  }
+
   //Diners
-  &.dcse, &.dcno, &.dcdk {
+  &.nis_dc {
     background-color: #000;
     color: #000;
     font-family: arial, helvetica, clean, sans-serif;
+
     .row:first-child > div {
       background-color: rgba(45, 45, 45, 0.77);
     }
+
     .row > div {
       background-color: rgba(255, 255, 255, 1);
     }
+
     #logo {
       background-image: url(../img/dcse_logo.png);
       background-size: 175px 45px;
@@ -29,6 +33,7 @@ html {
       display: block;
       content: '';
     }
+
     h1, h2, h3, h4, h5 {
       font-family: "Gill Sans W01 Medium", Arial, "Century Schoolbook", "Times New Roman", Times, serif;
       font-weight: 500;
@@ -37,7 +42,7 @@ html {
     }
   }
   //Eurocard
-  &.ecse, &.ecno, &.ecdk {
+  &.nis_ec {
     background: url(../img/eurocard_bg.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
        -moz-background-size: cover;
@@ -53,13 +58,20 @@ html {
   }
 
   // Generic Co Brand...
-  &.cb, &.cbse, &.cbno, &.cbdk {
+  &.nis_cobrand {
     background-color: #f4f4f4;
+
     .wrapper {
       width: 310px;
       @include mq(smallscreens) {
         width: 500px;
       }
+    }
+
+    .gh {
+      display: block;
+      margin-bottom: 14px;
+      margin-left: 20px;
     }
 
     .wrapper .row:last-child {
@@ -92,9 +104,6 @@ html {
 
     .row:first-child > div {
       margin-bottom: 3px;
-    }
-
-    #logo {
     }
   }
 

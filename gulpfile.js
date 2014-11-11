@@ -24,6 +24,7 @@ var runsequence = require('run-sequence');
 var sftp = require('gulp-sftp');
 var streamify = require('gulp-streamify');
 var packer = require('gulp-packer');
+var minifyHTML = require('gulp-minify-html');
 
 var projectname = "FE-Gulp-Boilerplate";
 
@@ -104,10 +105,16 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(paths.scripts.dest))
 });
 gulp.task('html', function() {
-    return gulp.src(paths.html.src).pipe(fileinclude()).pipe(gulp.dest(paths.html.dest)).pipe(reload({
+    return gulp.src(paths.html.src)
+        .pipe(fileinclude())
+        //.pipe(minifyHTML({comments:true,spare:true}))
+        .pipe(gulp.dest(paths.html.dest))
+        .pipe(reload({
         stream: true
-    }));
+        })
+    );
 });
+
 gulp.task('styles', function() {
     //return gulp.src(paths.styles.src + '**/**').pipe(sass()).pipe(gulp.dest(paths.styles.dest));
     return gulp.src(paths.styles.src + '**/**')
