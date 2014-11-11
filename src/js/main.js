@@ -104,7 +104,7 @@ var getBrand = function getCoBrandFunction() {
 
 $(function() {
     setScreenWitdhClass();
-    getBrand();
+    //getBrand();
     centerContent();
 });
 
