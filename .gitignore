@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gem Files
 *.gem
 
@@ -12,3 +13,11 @@ test/test
 # Sass Files
 .sass-cache
 
+=======
+dist/
+node_modules/
+l10n/
+tmp/
+WORK/
+.sass-cache/
+>>>>>>> FETCH_HEAD
